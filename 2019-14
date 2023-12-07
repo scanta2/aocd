@@ -1,0 +1,79 @@
+{
+ "nbformat": 4,
+ "nbformat_minor": 2,
+ "metadata": {
+  "language_info": {
+   "name": "python",
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "version": "3.7.5-final"
+  },
+  "orig_nbformat": 2,
+  "file_extension": ".py",
+  "mimetype": "text/x-python",
+  "name": "python",
+  "npconvert_exporter": "python",
+  "pygments_lexer": "ipython3",
+  "version": 3,
+  "kernelspec": {
+   "name": "caa00c2a-5430-410f-a8c5-7c025fc8da53",
+   "display_name": "'Python Interactive'"
+  }
+ },
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 20,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": "TNFQ (1, (('MLVWS', 2), ('LJNWK', 8)))\nBMWK (2, (('BWXQJ', 1),))\nJQCF (9, (('JMGP', 1), ('WMJW', 3)))\nQWSLS (6, (('BWXQJ', 8), ('BJWR', 10)))\nCTPTW (6, (('PLSH', 3), ('TNFQ', 1)))\nRQCNC (7, (('GQDJG', 11), ('BMWK', 5), ('FZCK', 1)))\nPTGXM (7, (('VWSRH', 1),))\nVWSRH (7, (('ORE', 104),))\nKDHF (7, (('PTGXM', 1), ('WMJW', 13), ('BJGD', 1)))\nBDJK (6, (('QWSLS', 12), ('PLSH', 3), ('HFBPX', 4), ('DFTH', 2), ('BCTRK', 11), ('JPKWB', 4), ('MKMRC', 4), ('XQJZQ', 3)))\nKRQHC (2, (('JQCF', 1), ('CVSC', 3)))\nQLRXZ (7, (('ORE', 128),))\nHFQBG (1, (('CXLWB', 32), ('TZWD', 18)))\nBWXQJ (9, (('KDHF', 31),))\nLJNWK (9, (('MLVWS', 21),))\nCXLWB (5, (('QLRXZ', 3),))\nJTDT (4, (('LQWDR', 3), ('WSDH', 2), ('JPKWB', 5), ('RSTQC', 1), ('BJWR', 2), ('ZFNR', 1), ('QWSLS', 16)))\nMSTS (9, (('BWXQJ', 3), ('JMGP', 14)))\nDKWLT (9, (('KXMKM', 1), ('LFCR', 2)))\nFWQVP (3, (('CVSC', 6),))\nDFTH (9, (('XBVH', 6), ('HFBPX', 1), ('FZCK', 2)))\nBCTRK (2, (('MSTS', 9),))\nFDKZ (2, (('PLSH', 1), ('MSTS', 28)))\nZFNR (6, (('XBVH', 10), ('BJWR', 5), ('FWQVP', 2)))\nXBVH (6, (('CVSC', 2),))\nXQJZQ (3, (('BWXQJ', 1), ('KXMKM', 2)))\nWMJW (4, (('VWSRH', 1), ('TZWD', 1)))\nGRWK (8, (('CTPTW', 14), ('JMGP', 19)))\nBLVK (5, (('NLGS', 13), ('PTGXM', 1), ('HFQBG', 3)))\nNLGS (7, (('PTGXM', 2),))\nDLPZ (3, (('ORE', 123),))\nWSDH (3, (('ZNRPX', 2), ('DKWLT', 35)))\nMKDQF (2, (('TZWD', 1), ('BLVK', 1), ('BWXQJ', 9)))\nMLVWS (2, (('DLPZ', 2),))\nVKCL (8, (('MKDQF', 8), ('JQCF', 4), ('VLMQJ', 12)))\nBJWR (7, (('KRQHC', 1),))\nLFCR (9, (('GRWK', 1), ('FWQVP', 2)))\nGQDJG (2, (('MSTS', 2),))\nTZWD (9, (('ORE', 132),))\nRHKZW (8, (('FWQVP', 1),))\nFUEL (1, (('FDKZ', 43), ('BJWR', 11), ('RHKZW', 63), ('PJCZB', 4), ('BDJK', 1), ('RQCNC', 13), ('JTDT', 8), ('DKWLT', 3), ('JPKWB', 13)))\nRSTQC (1, (('LFCR', 1), ('DFTH', 5)))\nKPTF (8, (('GQDJG', 10),))\nJMGP (7, (('BWXQJ', 4), ('MKDQF', 1)))\nPJCZB (8, (('FGNPM', 10), ('DFTH', 23), ('CXLWB', 2), ('KPTF', 6), ('DKWLT', 3), ('MKDQF', 10), ('MJSG', 1), ('RSTQC', 6)))\nBJGD (7, (('VWSRH', 8), ('DLPZ', 1)))\nHBKH (9, (('BLVK', 2),))\nHFBPX (9, (('LQWDR', 16), ('MSTS', 3)))\nKXMKM (2, (('TNFQ', 1), ('HFQBG', 29), ('BLVK', 4)))\nMJSG (8, (('CVSC', 11),))\nFGNPM (6, (('LFCR', 3),))\nFZCK (1, (('HFQBG', 11), ('MKDQF', 13)))\nKBTWZ (9, (('BWXQJ', 11), ('QLRXZ', 1), ('TNFQ', 1)))\nLQWDR (7, (('XQJZQ', 7), ('VKCL', 6)))\nCVSC (1, (('LJNWK', 1), ('HBKH', 4)))\nJPKWB (5, (('PLSH', 4), ('WSDH', 2), ('KPTF', 2)))\nMKMRC (8, (('KPTF', 1),))\nVLMQJ (2, (('NLGS', 5), ('KDHF', 2), ('KBTWZ', 1)))\nPLSH (1, (('MLVWS', 4), ('WMJW', 1), ('LJNWK', 8)))\nZNRPX (7, (('VKCL', 3),))\n"
+    }
+   ],
+   "source": [
+    "from aocd.models import Puzzle\n",
+    "puzzle = Puzzle(year=2019,day=14).input_data.split('\\n')\n",
+    "recipe = {}\n",
+    "for line in puzzle:\n",
+    "    new_line = line.replace(',', '').split(' ')\n",
+    "    recipe[new_line[-1]] = (int(new_line[-2]), tuple((new_line[2*i+1], int(new_line[2*i])) for i in range((len(new_line)-3)//2)))\n",
+    "for instr in recipe:\n",
+    "    print(instr, recipe[instr])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 23,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": "(1, (('FDKZ', 43), ('BJWR', 11), ('RHKZW', 63), ('PJCZB', 4), ('BDJK', 1), ('RQCNC', 13), ('JTDT', 8), ('DKWLT', 3), ('JPKWB', 13)))\n"
+    }
+   ],
+   "source": [
+    "# Objective: get 1 fuel\n",
+    "from collections import Counter\n",
+    "material_counter = Counter()\n",
+    "def make_material(material, quantity):\n",
+    "    instruction = recipe[material]\n",
+    "    print(instruction)\n",
+    "    recipe_quantity = instruction[0]\n",
+    "\n",
+    "make_material('FUEL',1)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ]
+}
