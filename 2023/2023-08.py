@@ -5,6 +5,7 @@ from math import prod, lcm
 from itertools import chain, product
 from collections import defaultdict, OrderedDict, Counter
 from copy import copy, deepcopy
+from sympy.ntheory.modular import crt
 
 day = 8
 year = 2023
@@ -26,14 +27,23 @@ for line in map.split('\n'):
 def part1(instr, first, end_fn):
     count = 0
     curr_pos = first
+    stack = [curr_pos]
     while not end_fn(curr_pos):
         curr_pos = tree[curr_pos][moves[instr[0]]]
+        stack.append(curr_pos)
         instr = instr[1:] + instr[:1]
         count += 1
-    return count
-puzzle.answer_a = part1(instr,'AAA', lambda x: x == 'ZZZ')
+    return count, stack
+puzzle.answer_a, _ = part1(instr,'AAA', lambda x: x == 'ZZZ')
 
 def part2(instr): 
     curr_pos = [p for p in tree if p[-1] == 'A']
-    return lcm(*(part1(copy(instr), c, lambda x: x[-1] == 'Z') for c in curr_pos))
+    rems = []
+    mods = []
+    for c in curr_pos:
+        count, stack = part1(copy(instr), c, lambda x: x[-1] == 'Z')
+        next_pos = tree[stack[-1]][moves[instr[(count+1)%len(instr)]]]
+        rems.append(stack.index(next_pos))
+        mods.append(len(stack)-rems[-1])
+    return crt(mods,rems)[-1]
 puzzle.answer_b = part2(instr)
