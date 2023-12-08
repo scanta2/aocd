@@ -23,17 +23,17 @@ for line in map.split('\n'):
 
 # instr, map = puzzle.examples[0].input_data.split('\n\n')
 
-def part1(instr, first, last=None):
+def part1(instr, first, end_fn):
     count = 0
     curr_pos = first
-    while (last is not None and curr_pos != last) or curr_pos[-1] != 'Z':
+    while not end_fn(curr_pos):
         curr_pos = tree[curr_pos][moves[instr[0]]]
         instr = instr[1:] + instr[:1]
         count += 1
     return count
-puzzle.answer_a = part1(instr,'AAA','ZZZ')
+puzzle.answer_a = part1(instr,'AAA', lambda x: x == 'ZZZ')
 
 def part2(instr): 
     curr_pos = [p for p in tree if p[-1] == 'A']
-    return lcm(*(part1(copy(instr), c) for c in curr_pos))
+    return lcm(*(part1(copy(instr), c, lambda x: x[-1] == 'Z') for c in curr_pos))
 puzzle.answer_b = part2(instr)
