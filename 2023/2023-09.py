@@ -16,14 +16,12 @@ data = puzzle.input_data.split('\n')
 
 def solve(flip_input):
     def solve_line(line):
-        seq = []
-        new_line = [int(i) for i in line.split(' ')]
+        seq = [list(map(int,line.split()))]
         if flip_input:
-            new_line = new_line[::-1]
-        seq.append(new_line)
-        while any(i != 0 for i in seq[-1]):
-            seq.append([seq[-1][j]-seq[-1][j-1] for j in range(1,len(seq[-1]))])
-        return sum(seq[-i-1][-1] for i in range(1,len(seq)))
+            seq[0] = seq[0][::-1]
+        while set(seq[-1]) != {0}:
+            seq.append([a-b for (a,b) in zip(seq[-1][1:], seq[-1][:-1])])
+        return sum(s[-1] for s in seq)
     return sum(solve_line(line) for line in data)
 
 puzzle.answer_a = solve(False)
