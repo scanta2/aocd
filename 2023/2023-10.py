@@ -77,22 +77,24 @@ puzzle.answer_a = res
 
 
 def part2():
-    d_loop_tiles = [(2*a,2*b) for (a,b) in loop_tiles]
-    edges = list(zip(d_loop_tiles[:-1], d_loop_tiles[1:]))
-    # get all the vertical edges sorted for ascending rows first
-    v_edges = [sorted(e) for e in edges if e[0][-1] == e[1][-1]]
-    
+    # clean up disconnected tiles
 
-    inside_tiles = set()
-
-    for i,j in product(range(2*len(data)),range(2*len(data[0]))):
-        ni, nj = i//2, j//2
-        if (ni,nj) in loop_tiles or (ni,nj) in inside_tiles:
+    new_data = deepcopy(data)
+    grid_height = len(data)
+    grid_width = len(data[0])
+    for i,j in product(range(grid_height),range(grid_width)):
+        if (i,j) in loop_tiles:
+            continue
+        new_data[i] = new_data[i][:j] + '.' + new_data[i][j+1:]
+    count = 0
+    for i,j in product(range(grid_height),range(grid_width)):
+        if new_data[i][j] != '.':
             continue
         # ray-casting algorithm
         # count how many v_edges are crossed going right,
         # even: point is out, odd: point is in
-        if sum(1 for (a,b) in v_edges if a[1]>j and a[0]<=i<=b[0]) % 2 == 1:
-            inside_tiles.add((ni,nj))
-    return len(inside_tiles)
+        ray = new_data[i][j+1:].replace('-','').replace('.','').replace('FJ','|').replace('L7','|')
+        if len(ray)%2 == 1:
+            count += 1
+    return count
 puzzle.answer_b = part2()
