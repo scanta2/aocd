@@ -25,37 +25,29 @@ else:
 ?###???????? 3,2,1""".split('\n')
     
 @functools.cache
-def recurse(spring, records):
-    if len(records) == 0 and '#' in spring:
-        return 0
-    record0, other_records = records[0], records[1:]    
-
-    count = 0
+def recurse(springs, records, num_done_rec0 = 0):
+    # base case, only dots are left in the spring
+    if not springs:
+        # valid solution if no more records and no open groups
+        return 1 if not records and num_done_rec0 == 0 else 0
     
-    # the max length of this block needs to account that there
-    # can be a block at the end of the string that can satisfy all
-    # the records
-    min_size_block_right = sum(records) + len(other_records)
-    for i in range(len(spring)-min_size_block_right+1):
-        # let's assume record zero is on the left of the string
-        left, right = spring[i:i+record0], spring[i+record0:]
+    num_sol = 0
 
-        # left can contain a split of length record0
-        if all(c in "#?" for c in left):
-            # we are sure left contains the split because we are done
-            if len(other_records) == 0 and all(c in ".?" for c in right):
-                count += 1
-            elif len(right) > 0 and right[0] in '.?':
-                # the left side can contain a split matching record0
-                # and there is a pivot point and more stuff to check
-                count += recurse(right[1:], other_records)
-        
-        # left can't contain a split, but if the first character
-        # is # we can cut all the recursions
-        if left[0] == '#':
-            break
-    
-    return count
+    possibles = '#.' if springs[0] == '?' else springs[0]
+    for possible in possibles:
+        if possible == '#':
+            # continue the current group
+            num_sol += recurse(springs[1:], records, num_done_rec0+1)
+        else:
+            # if still in group
+            if num_done_rec0 > 0:
+                # close the group
+                if records and records[0] == num_done_rec0:
+                    num_sol += recurse(springs[1:], records[1:], 0)
+            else:
+                # move on
+                num_sol += recurse(springs[1:], records, 0)
+    return num_sol
 
 def solve(copies=1):
     res = 0
@@ -67,6 +59,7 @@ def solve(copies=1):
         for i in range(1,copies):
             spring += '?' + ospring
             record += ',' + orecord 
+        spring += '.' # simplify ending
         record = tuple([int(i) for i in record.split(',')])
         ans = recurse(spring, tuple(record))
         print(ans)
