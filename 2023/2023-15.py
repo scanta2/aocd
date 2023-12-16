@@ -21,16 +21,16 @@ else:
     data = puzzle.example[0].input_data.split('\n')
 
 def computeHash(token):
-    current_value = 0
+    hash = 0
     for t in token:
-        current_value += ord(t)
-        current_value *= 17
-        current_value %= 256
-    return current_value
+        hash += ord(t)
+        hash *= 17
+        hash %= 256
+    return hash
 
 def part1():
     tokens = data[0].split(',')
-    return sum(computeHash(t) for t in tokens)
+    return sum(map(computeHash, tokens))
 
 def part2():
     boxes = [[] for i in range(256)]
@@ -40,15 +40,15 @@ def part2():
         box_idx = computeHash(label)
         lens_idx = [i for i, (lens,_) in enumerate(boxes[box_idx]) if lens == label]
         if split_char == '-' and lens_idx:
-            boxes[box_idx] = boxes[box_idx][:lens_idx[0]] + boxes[box_idx][lens_idx[0]+1:]
+            boxes[box_idx].pop(lens_idx[0])
         elif split_char == '=':
             if lens_idx:
                 boxes[box_idx][lens_idx[0]] = (label, fl)
             else:
                 boxes[box_idx].append((label,fl))
     return sum( \
-        (ib+1)*sum((il+1)*int(fl) for il, (_, fl) in enumerate(box)) \
-        for ib, box in enumerate(boxes))
+        ib*sum(il*int(fl) for il, (_, fl) in enumerate(box,start=1)) \
+        for ib, box in enumerate(boxes,start=1))
 
 puzzle.answer_a = part1()
 puzzle.answer_b = part2()
