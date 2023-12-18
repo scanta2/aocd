@@ -37,6 +37,7 @@ def solve(steps):
         perimeter += num
         boundary.append(tuple(boundary[-1][i]+num*dir[i] for i in range(2)))
     inside = shoelace(boundary)
+    # Pick's theorem
     return (perimeter + inside)//2 + 1
 
 def part1():
