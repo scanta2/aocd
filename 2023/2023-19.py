@@ -58,9 +58,8 @@ def part1():
         part = Part(p)
         res += workflows['in'].eval(part, workflows)
     return res
-
     
-# puzzle.answer_a = part1()
+puzzle.answer_a = part1()
 
 def solve_p2(values, curr, workflows):
     res = 0
@@ -95,12 +94,10 @@ def solve_p2(values, curr, workflows):
             if goto == 'A':
                 res += prod(k[1]-k[0] for k in values.values())
             elif goto == 'R':
-                res +=0
+                res += 0
             else:
                 res += solve_p2(values, goto, workflows)
     return res
-
-
 
 def part2():
     workflows = {}
