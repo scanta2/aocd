@@ -105,7 +105,8 @@ def part2elegant():
     #
     # (V1-V0)xP + (P0-P1)xV = P0xV0 - P1xV1
     # (V2-V0)xP + (P0-P2)xV = P0xV0 - P2xV2
-    # Ax can also be expressed in matrix form
+    # The operator (A x) can also be expressed in matrix form,
+    # using the Levi-Civita tensor.
 
     def crossToMatrix(A):
         return np.cross(np.eye(3, dtype=np.int64), A)
@@ -120,8 +121,7 @@ def part2elegant():
     V0 = np.array(V0, dtype=np.int64)
     V1 = np.array(V1, dtype=np.int64)
     V2 = np.array(V2, dtype=np.int64)
-
-    
+  
     A11 = crossToMatrix(V1-V0)
     A12 = crossToMatrix(P0-P1)
     A21 = crossToMatrix(V2-V0)
